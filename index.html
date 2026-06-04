@@ -130,7 +130,7 @@
   .step-num{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;align-items:center;justify-content:center;font-weight:700}
 
   label{display:block;font-size:13px;font-weight:600;margin:0 0 6px}
-  input[type=text],input[type=tel]{
+  input[type=text],input[type=tel],input[type=email]{
     width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit;
     transition:border .15s,box-shadow .15s;
   }
@@ -225,7 +225,7 @@
           <div class="d-line"></div>
           <div class="venue">
             <div class="venue-label">Địa điểm</div>
-            <div class="venue-addr">Yoyo Garden, 179 Hai Bà Trưng,<br>Xuân Hòa, Tp. Hồ Chí Minh</div>
+            <div class="venue-addr">Yoyo Garden, 179 Hai Bà Trưng,<br>Phường Xuân Hoà, Tp. Hồ Chí Minh</div>
           </div>
         </div>
       </div>
@@ -282,23 +282,28 @@
       <div class="panel">
         <h2><span class="step-num">2</span> Xác nhận tham dự</h2>
         <p class="hint">Quý khách mời vui lòng xác nhận tham dự trước ngày 18/6/2026 để chúng tôi chuẩn bị đón tiếp chu đáo.</p>
-
-        <div class="config-note" id="configNote">
-          ⚙️ <b>Demo:</b> form chưa nối Google Sheet. Mở file, thay <code>SCRIPT_URL</code> bằng link Apps Script đã deploy để lưu dữ liệu thật.
-        </div>
+        
 
         <form id="rsvpForm">
           <div class="field">
+            <label for="rsvpCompany">Tên doanh nghiệp</label>
+            <input type="text" id="rsvpCompany" placeholder="Công ty / Tổ chức" required>
+          </div>
+          <div class="field">
             <label for="rsvpName">Họ và tên</label>
             <input type="text" id="rsvpName" placeholder="Họ và tên" required>
+          </div>
+          <div class="field">
+            <label for="rsvpPosition">Chức vụ</label>
+            <input type="text" id="rsvpPosition" placeholder="VD: Trưởng phòng" required>
           </div>
           <div class="field">
             <label for="rsvpPhone">Số điện thoại</label>
             <input type="tel" id="rsvpPhone" placeholder="VD: 0901 234 567" required>
           </div>
           <div class="field">
-            <label for="rsvpCompany">Tên doanh nghiệp</label>
-            <input type="text" id="rsvpCompany" placeholder="Công ty / Tổ chức" required>
+            <label for="rsvpEmail">Email</label>
+            <input type="email" id="rsvpEmail" placeholder="VD: ten@congty.com" required>
           </div>
 
           <label class="checkbox">
@@ -474,16 +479,18 @@
   const rsvpMsg  = document.getElementById('rsvpMsg');
   const rsvpBtn  = document.getElementById('rsvpBtn');
 
-  if(SCRIPT_URL){ document.getElementById('configNote').style.display = 'none'; }
+
 
   rsvpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     rsvpMsg.className = 'msg';
 
     const data = {
-      name:    document.getElementById('rsvpName').value.trim(),
-      phone:   document.getElementById('rsvpPhone').value.trim(),
-      company: document.getElementById('rsvpCompany').value.trim(),
+      company:  document.getElementById('rsvpCompany').value.trim(),
+      name:     document.getElementById('rsvpName').value.trim(),
+      position: document.getElementById('rsvpPosition').value.trim(),
+      phone:    document.getElementById('rsvpPhone').value.trim(),
+      email:    document.getElementById('rsvpEmail').value.trim(),
       confirmed: document.getElementById('rsvpConfirm').checked ? 'Có' : 'Không',
       submittedAt: new Date().toLocaleString('vi-VN')
     };
