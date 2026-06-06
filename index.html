@@ -48,11 +48,12 @@
   .ag-eyebrow{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700;text-align:center;height:34px;display:flex;align-items:center;justify-content:center;margin:0 0 14px}
   .ag-title{font-size:23px;font-weight:800;text-align:center;color:var(--navy);margin:0 0 20px;line-height:1.15}
   .ag-date{font-size:12px;color:#3a4a66;text-align:center;margin-bottom:18px}
-  .ag-list{display:flex;flex-direction:column;gap:12px;flex:1}
+  .ag-list{display:flex;flex-direction:column;gap:20px;flex:1}
   .ag-item{display:flex;gap:12px;align-items:flex-start}
   .ag-time{font-size:15px;font-weight:800;color:var(--blue);min-width:50px;text-align:right;padding-top:2px}
   .ag-text{display:flex;flex-direction:column;text-align:left;border-left:2px solid rgba(37,71,240,.30);padding-left:12px}
   .ag-text b{font-size:14px;color:var(--navy);line-height:1.25}
+  .ag-text .ag-pre{font-size:11px;font-weight:700;color:var(--blue);margin-bottom:3px;letter-spacing:.2px}
   .ag-text span{font-size:11.5px;color:#5b6a8a;margin-top:2px}
   .ag-note{font-size:10.5px;color:#8090ad;text-align:center;margin-top:12px;font-style:italic}
   .card{
@@ -147,6 +148,7 @@
   }
   .uploader:hover{border-color:var(--blue);background:#f3f6ff}
   .uploader.has{border-style:solid;border-color:var(--blue)}
+  .uploader.dragover{border-style:solid;border-color:var(--blue);background:#eaf0ff}
   .uploader .ic{font-size:26px}
   .uploader p{margin:6px 0 0;font-size:13px;color:var(--muted)}
   .uploader b{color:var(--blue)}
@@ -233,12 +235,12 @@
         <div class="ag-eyebrow">Chương trình</div>
         <h2 class="ag-title">Agenda</h2>
         <div class="ag-list">
-          <div class="ag-item"><span class="ag-time">15:00</span><div class="ag-text"><b>Đón khách &amp; Check-in</b><span>Welcome drink &amp; networking</span></div></div>
-          <div class="ag-item"><span class="ag-time">15:30</span><div class="ag-text"><b>Khai mạc &amp; phát biểu chào mừng</b><span>Đại diện Smartlog &amp; FPT</span></div></div>
-          <div class="ag-item"><span class="ag-time">15:40</span><div class="ag-text"><b>Mastering Automated Route Planning with Advanced AI</b><span>Đại diện Smartlog</span></div></div>
-          <div class="ag-item"><span class="ag-time">16:00</span><div class="ag-text"><b>Next-gen logistics with Cloud, Data &amp; AI</b><span>Đại diện FCI</span></div></div>
-          <div class="ag-item"><span class="ag-time">16:20</span><div class="ag-text"><b>Best practice and Successful Customers</b><span>Đại diện Cadivi</span></div></div>
-          <div class="ag-item"><span class="ag-time">17:00</span><div class="ag-text"><b>Networking &amp; Warm Dinner</b><span>Kết nối, giao lưu và thưởng thức tiệc tối</span></div></div>
+          <div class="ag-item"><span class="ag-time">15:00</span><div class="ag-text"><b>Đón khách</b></div></div>
+          <div class="ag-item"><span class="ag-time">15:30</span><div class="ag-text"><b>Phát biểu khai mạc</b></div></div>
+          <div class="ag-item"><span class="ag-time">15:40</span><div class="ag-text"><span class="ag-pre">Keynote 1: Smartlog</span><b>Unlocking AI-Powered Logistics: New Platform &amp; Breakthrough Features</b></div></div>
+          <div class="ag-item"><span class="ag-time">16:00</span><div class="ag-text"><span class="ag-pre">Keynote 2: FPT Cloud</span><b>Next-gen logistics with Cloud, Data &amp; AI</b></div></div>
+          <div class="ag-item"><span class="ag-time">16:20</span><div class="ag-text"><b>Customer Success Story</b><span style="font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.2px;margin-top:3px">Best Practices from CADIVI</span></div></div>
+          <div class="ag-item"><span class="ag-time">17:00</span><div class="ag-text"><b>Networking &amp; Warm Dinner</b></div></div>
         </div>
       </div>
       </div>
@@ -246,42 +248,10 @@
 
     <!-- ===== FORMS ===== -->
     <div class="forms-col">
-      <!-- STEP 1: personalize -->
-      <div class="panel">
-        <h2><span class="step-num">1</span> Tạo thiệp của bạn</h2>
-        <p class="hint">Nhập tên và tải ảnh — thiệp sẽ tự cập nhật bên cạnh.</p>
-
-        <div class="field">
-          <label>Giới tính (hiển thị Ông / Bà trên thiệp)</label>
-          <div class="gender-row">
-            <label class="gender-opt"><input type="radio" name="gender" value="Ông"> Ông</label>
-            <label class="gender-opt"><input type="radio" name="gender" value="Bà"> Bà</label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="nameInput">Họ và tên</label>
-          <input type="text" id="nameInput" placeholder="VD: Nguyễn Văn A" autocomplete="name">
-        </div>
-
-        <div class="field">
-          <label>Ảnh của bạn</label>
-          <div class="uploader" id="uploader">
-            <div class="ic">📷</div>
-            <p>Nhấn để <b>tải ảnh lên</b> (JPG, PNG)</p>
-          </div>
-          <input type="file" id="photoInput" accept="image/*" hidden>
-        </div>
-
-        <div class="btn-row">
-          <button class="btn btn-primary" id="downloadBtn" disabled>⬇ Tải thiệp về</button>
-        </div>
-      </div>
-
       <!-- STEP 2: RSVP -->
       <div class="panel">
-        <h2><span class="step-num">2</span> Xác nhận tham dự</h2>
-        <p class="hint">Quý khách mời vui lòng xác nhận tham dự trước ngày 18/6/2026 để chúng tôi chuẩn bị đón tiếp chu đáo.</p>
+        <h2><span class="step-num">1</span> Xác nhận tham dự</h2>
+        <p class="hint">Quý khách mời vui lòng <b style="color:var(--navy)">xác nhận tham dự trước ngày 18/6/2026</b> để chúng tôi chuẩn bị đón tiếp chu đáo.</p>
         
 
         <form id="rsvpForm">
@@ -315,6 +285,39 @@
           <div class="msg" id="rsvpMsg"></div>
         </form>
       </div>
+
+      <!-- STEP 1: personalize -->
+      <div class="panel">
+        <h2><span class="step-num">2</span> Tạo thiệp của bạn <span style="font-size:12px;font-weight:500;color:var(--muted)">(Anh/Chị có thể bỏ qua bước này)</span></h2>
+        <p class="hint">Nhập tên và tải ảnh — thiệp sẽ tự cập nhật bên cạnh.</p>
+
+        <div class="field">
+          <label>Giới tính (hiển thị Ông / Bà trên thiệp)</label>
+          <div class="gender-row">
+            <label class="gender-opt"><input type="radio" name="gender" value="Ông"> Ông</label>
+            <label class="gender-opt"><input type="radio" name="gender" value="Bà"> Bà</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="nameInput">Họ và tên</label>
+          <input type="text" id="nameInput" placeholder="VD: Nguyễn Văn A" autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label>Ảnh của bạn</label>
+          <div class="uploader" id="uploader">
+            <div class="ic">📷</div>
+            <p>Nhấn hoặc <b>kéo-thả ảnh</b> vào đây (JPG, PNG)</p>
+          </div>
+          <input type="file" id="photoInput" accept="image/*" hidden>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="downloadBtn" disabled>⬇ Tải thiệp về</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -335,7 +338,7 @@
   /* ====== CONFIG ====== */
   // Dán URL Web App của Google Apps Script vào đây (xem hướng dẫn).
   // Để trống ("") để chạy ở chế độ demo.
-  const SCRIPT_URL = "";
+  const SCRIPT_URL = "https://script.google.com/a/macros/gosmartlog.com/s/AKfycbwd3kjamRDWYUsBg99e1h1rQgn0DaBYk0DndppEaONQWnYBhUU0KKQNLFM4NXFw9YJb7Q/exec";
 
   /* ====== STEP 1: personalize ====== */
   const nameInput = document.getElementById('nameInput');
@@ -363,12 +366,10 @@
       guestName.classList.add('empty');
     }
     updateDownloadState();
-    if(!document.getElementById('rsvpName').dataset.touched){
-      document.getElementById('rsvpName').value = v;
-    }
   }
 
-  nameInput.addEventListener('input', renderName);
+  const _rsvpNameEl = document.getElementById('rsvpName');
+  nameInput.addEventListener('input', () => { renderName(); if(_rsvpNameEl) _rsvpNameEl.value = nameInput.value; });
   document.querySelectorAll('input[name="gender"]').forEach(r => r.addEventListener('change', renderName));
 
   uploader.addEventListener('click', () => photoInput.click());
@@ -411,12 +412,26 @@
     im.src=src;
   }
 
-  photoInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if(!file) return;
+  function handleFile(file){
+    if(!file || !file.type || file.type.indexOf('image/')!==0){
+      alert('Vui lòng chọn một tệp ảnh (JPG, PNG).'); return;
+    }
     const reader = new FileReader();
     reader.onload = (ev) => openCropper(ev.target.result);
     reader.readAsDataURL(file);
+  }
+
+  photoInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+  ['dragenter','dragover'].forEach(ev => uploader.addEventListener(ev, (e)=>{
+    e.preventDefault(); e.stopPropagation(); uploader.classList.add('dragover');
+  }));
+  ['dragleave','dragend'].forEach(ev => uploader.addEventListener(ev, (e)=>{
+    e.preventDefault(); e.stopPropagation(); uploader.classList.remove('dragover');
+  }));
+  uploader.addEventListener('drop', (e)=>{
+    e.preventDefault(); e.stopPropagation(); uploader.classList.remove('dragover');
+    if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });
 
   let _drag=false,_lx=0,_ly=0;
@@ -451,7 +466,7 @@
     downloadBtn.disabled = !(nameInput.value.trim() && hasPhoto);
   }
 
-  document.getElementById('rsvpName').addEventListener('input', function(){ this.dataset.touched = "1"; });
+  document.getElementById('rsvpName').addEventListener('input', function(){ nameInput.value = this.value; renderName(); });
 
   /* ====== DOWNLOAD CARD ====== */
   downloadBtn.addEventListener('click', () => {
