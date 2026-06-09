@@ -216,10 +216,10 @@
         </div>
         <div class="card-foot">
           <div class="date-row">
-            <div class="d-weekday">THỨ 5</div>
+            <div class="d-weekday">THỨ 4</div>
             <div class="d-center">
               <div class="d-time">15h00</div>
-              <div class="d-day">25</div>
+              <div class="d-day">24</div>
               <div class="d-year">2026</div>
             </div>
             <div class="d-month">tháng 06</div>
@@ -237,9 +237,9 @@
         <div class="ag-list">
           <div class="ag-item"><span class="ag-time">15:00</span><div class="ag-text"><b>Đón khách</b></div></div>
           <div class="ag-item"><span class="ag-time">15:30</span><div class="ag-text"><b>Phát biểu khai mạc</b></div></div>
-          <div class="ag-item"><span class="ag-time">15:40</span><div class="ag-text"><span class="ag-pre">Keynote 1: Smartlog</span><b>Unlocking AI-Powered Logistics: New Platform &amp; Breakthrough Features</b></div></div>
+          <div class="ag-item"><span class="ag-time">15:40</span><div class="ag-text"><span class="ag-pre">Keynote 1: Smartlog</span><b>Introducing Smartlog AI-Native Logistics Platform: Beyond Automation</b></div></div>
           <div class="ag-item"><span class="ag-time">16:00</span><div class="ag-text"><span class="ag-pre">Keynote 2: FPT Cloud</span><b>Next-gen logistics with Cloud, Data &amp; AI</b></div></div>
-          <div class="ag-item"><span class="ag-time">16:20</span><div class="ag-text"><b>Customer Success Story</b><span style="font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.2px;margin-top:3px">Best Practices from CADIVI</span></div></div>
+          <div class="ag-item"><span class="ag-time">16:20</span><div class="ag-text"><span class="ag-pre">Keynote 3: CADIVI</span><b>From Legacy to Next-Gen Logistics: Real Lessons from the Frontline</b></div></div>
           <div class="ag-item"><span class="ag-time">17:00</span><div class="ag-text"><b>Networking &amp; Warm Dinner</b></div></div>
         </div>
       </div>
@@ -251,7 +251,7 @@
       <!-- STEP 2: RSVP -->
       <div class="panel">
         <h2><span class="step-num">1</span> Xác nhận tham dự</h2>
-        <p class="hint">Quý khách mời vui lòng <b style="color:var(--navy)">xác nhận tham dự trước ngày 18/6/2026</b> để chúng tôi chuẩn bị đón tiếp chu đáo.</p>
+        <p class="hint">Quý khách mời vui lòng xác nhận tham dự trước ngày 18/6/2026 để chúng tôi chuẩn bị đón tiếp chu đáo.</p>
         
 
         <form id="rsvpForm">
@@ -423,6 +423,7 @@
 
   photoInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
 
+  // kéo-thả ảnh từ máy tính vào khung upload
   ['dragenter','dragover'].forEach(ev => uploader.addEventListener(ev, (e)=>{
     e.preventDefault(); e.stopPropagation(); uploader.classList.add('dragover');
   }));
