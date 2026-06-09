@@ -77,11 +77,11 @@
   .card-logos{display:flex;align-items:center;justify-content:flex-start;gap:18px;margin-bottom:14px;min-height:34px}.card-logos .lg-right{margin-left:auto}.card-logos .lg-left{height:30px}.card-logos .lg-right{height:20px}
   .card-logos img{height:32px;width:auto;display:block;object-fit:contain}
 
-  .card-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;z-index:2;padding:10px 0}
+  .card-body{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:14px;text-align:center;z-index:2;padding:18px 0 10px}
   .eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700;margin:4px 0 9px}
   .card-title{font-size:20px;font-weight:800;line-height:1.18;margin:0 0 6px;color:var(--navy)}
   .card-title .hl{color:var(--blue)}
-  .card-sub{font-size:11.5px;font-weight:600;letter-spacing:.5px;color:#3a4a66;margin-bottom:12px}
+  .card-sub{font-size:11.5px;font-weight:600;letter-spacing:.5px;color:#3a4a66;margin:-10px 0 12px}
 
   .avatar{
     width:92px;height:92px;border-radius:50%;
@@ -103,7 +103,7 @@
   .guest-name.empty{color:rgba(11,31,58,.40);font-style:italic;font-weight:400;font-size:17px}
   .guest-name .hon{color:var(--blue);font-weight:600;margin-right:4px}
 
-  .card-foot{text-align:center;color:var(--navy);padding:12px 16px 14px;z-index:2;width:100%;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.8);border-radius:14px;box-shadow:0 6px 18px rgba(11,31,58,.08)}
+  .card-foot{text-align:center;color:var(--navy);padding:12px 16px 14px;margin-top:22px;z-index:2;width:100%;background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.8);border-radius:14px;box-shadow:0 6px 18px rgba(11,31,58,.08)}
   .date-row{display:flex;align-items:center;justify-content:center;gap:12px}
   .d-weekday{font-size:16px;font-weight:800;letter-spacing:.5px;color:var(--navy);flex:1;text-align:right}
   .d-month{font-size:16px;font-weight:500;color:var(--navy);flex:1;text-align:left}
@@ -188,6 +188,8 @@
   .crop-zoom{display:flex;align-items:center;gap:8px;margin:14px 0}
   .crop-zoom input{flex:1}
   .crop-actions{display:flex;gap:10px}
+
+  .ag-spk{display:block;font-size:11px;font-weight:600;margin-top:4px;color:#5b6a8a}
 </style>
 </head>
 <body>
@@ -206,10 +208,6 @@
         <div class="card-body">
           <h2 class="card-title">Next-Generation <span class="hl">Logistics</span> Powered by <span class="hl">Cloud, Data &amp; AI</span></h2>
           <div class="card-sub">Intelligent. Connected. Scalable</div>
-
-          <div class="avatar" id="avatar">
-            <span class="ph">Ảnh của bạn</span>
-          </div>
 
           <div class="guest-label">Trân trọng kính mời</div>
           <div class="guest-name empty" id="guestName">Họ và tên của bạn</div>
@@ -237,9 +235,9 @@
         <div class="ag-list">
           <div class="ag-item"><span class="ag-time">15:00</span><div class="ag-text"><b>Đón khách</b></div></div>
           <div class="ag-item"><span class="ag-time">15:30</span><div class="ag-text"><b>Phát biểu khai mạc</b></div></div>
-          <div class="ag-item"><span class="ag-time">15:40</span><div class="ag-text"><span class="ag-pre">Keynote 1: Smartlog</span><b>Introducing Smartlog AI-Native Logistics Platform: Beyond Automation</b></div></div>
-          <div class="ag-item"><span class="ag-time">16:00</span><div class="ag-text"><span class="ag-pre">Keynote 2: FPT Cloud</span><b>Next-gen logistics with Cloud, Data &amp; AI</b></div></div>
-          <div class="ag-item"><span class="ag-time">16:20</span><div class="ag-text"><span class="ag-pre">Keynote 3: CADIVI</span><b>From Legacy to Next-Gen Logistics: Real Lessons from the Frontline</b></div></div>
+          <div class="ag-item"><span class="ag-time">15:40</span><div class="ag-text"><span class="ag-pre">Keynote 1: Smartlog</span><b>Introducing Smartlog AI-Native Logistics Platform: Beyond Automation</b><span class="ag-spk">Mr. Dũng Trần · CTO<br>Ms. Ánh Lê · Head of Product Development</span></div></div>
+          <div class="ag-item"><span class="ag-time">16:00</span><div class="ag-text"><span class="ag-pre">Keynote 2: FPT Smart Cloud</span><b>Next-gen logistics with Cloud, Data &amp; AI</b><span class="ag-spk">Ms. Giang Đặng · Data Platform Product Owner</span></div></div>
+          <div class="ag-item"><span class="ag-time">16:20</span><div class="ag-text"><span class="ag-pre">Keynote 3: CADIVI</span><b>From Legacy to Next-Gen Logistics: Real Lessons from the Frontline</b><span class="ag-spk">Mr. Ninh Bùi · Head of IT</span></div></div>
           <div class="ag-item"><span class="ag-time">17:00</span><div class="ag-text"><b>Networking &amp; Warm Dinner</b></div></div>
         </div>
       </div>
@@ -248,47 +246,9 @@
 
     <!-- ===== FORMS ===== -->
     <div class="forms-col">
-      <!-- STEP 2: RSVP -->
+      <!-- Tạo thiệp -->
       <div class="panel">
-        <h2><span class="step-num">1</span> Xác nhận tham dự</h2>
-        <p class="hint">Quý khách mời vui lòng xác nhận tham dự trước ngày 18/6/2026 để chúng tôi chuẩn bị đón tiếp chu đáo.</p>
-        
-
-        <form id="rsvpForm">
-          <div class="field">
-            <label for="rsvpCompany">Tên doanh nghiệp</label>
-            <input type="text" id="rsvpCompany" placeholder="Công ty / Tổ chức" required>
-          </div>
-          <div class="field">
-            <label for="rsvpName">Họ và tên</label>
-            <input type="text" id="rsvpName" placeholder="Họ và tên" required>
-          </div>
-          <div class="field">
-            <label for="rsvpPosition">Chức vụ</label>
-            <input type="text" id="rsvpPosition" placeholder="VD: Trưởng phòng" required>
-          </div>
-          <div class="field">
-            <label for="rsvpPhone">Số điện thoại</label>
-            <input type="tel" id="rsvpPhone" placeholder="VD: 0901 234 567" required>
-          </div>
-          <div class="field">
-            <label for="rsvpEmail">Email</label>
-            <input type="email" id="rsvpEmail" placeholder="VD: ten@congty.com" required>
-          </div>
-
-          <label class="checkbox">
-            <input type="checkbox" id="rsvpConfirm" required>
-            <span>Tôi xác nhận sẽ tham dự sự kiện.</span>
-          </label>
-
-          <button type="submit" class="btn btn-primary" id="rsvpBtn">Xác nhận tham dự</button>
-          <div class="msg" id="rsvpMsg"></div>
-        </form>
-      </div>
-
-      <!-- STEP 1: personalize -->
-      <div class="panel">
-        <h2><span class="step-num">2</span> Tạo thiệp của bạn <span style="font-size:12px;font-weight:500;color:var(--muted)">(Anh/Chị có thể bỏ qua bước này)</span></h2>
+        <h2>Tạo thiệp của bạn</h2>
         <p class="hint">Nhập tên và tải ảnh — thiệp sẽ tự cập nhật bên cạnh.</p>
 
         <div class="field">
@@ -304,15 +264,6 @@
           <input type="text" id="nameInput" placeholder="VD: Nguyễn Văn A" autocomplete="name">
         </div>
 
-        <div class="field">
-          <label>Ảnh của bạn</label>
-          <div class="uploader" id="uploader">
-            <div class="ic">📷</div>
-            <p>Nhấn hoặc <b>kéo-thả ảnh</b> vào đây (JPG, PNG)</p>
-          </div>
-          <input type="file" id="photoInput" accept="image/*" hidden>
-        </div>
-
         <div class="btn-row">
           <button class="btn btn-primary" id="downloadBtn" disabled>⬇ Tải thiệp về</button>
         </div>
@@ -322,33 +273,11 @@
   </div>
 </div>
 
-<div id="cropModal" class="crop-modal" hidden>
-  <div class="crop-box">
-    <h3>Điều chỉnh ảnh</h3>
-    <p class="crop-hint">Kéo để di chuyển, dùng thanh trượt để phóng to. Ảnh sẽ được cắt vuông vừa khung tròn.</p>
-    <div class="crop-view" id="cropView"><img id="cropImg" alt=""></div>
-    <div class="crop-zoom"><span>🔍</span><input type="range" id="cropZoom" min="1" max="3" step="0.01" value="1"></div>
-    <div class="crop-actions">
-      <button type="button" class="btn btn-ghost" id="cropCancel">Hủy</button>
-      <button type="button" class="btn btn-primary" id="cropOk">Áp dụng</button>
-    </div>
-  </div>
-</div>
 <script>
-  /* ====== CONFIG ====== */
-  // Dán URL Web App của Google Apps Script vào đây (xem hướng dẫn).
-  // Để trống ("") để chạy ở chế độ demo.
-  const SCRIPT_URL = "https://script.google.com/a/macros/gosmartlog.com/s/AKfycbwd3kjamRDWYUsBg99e1h1rQgn0DaBYk0DndppEaONQWnYBhUU0KKQNLFM4NXFw9YJb7Q/exec";
-
   /* ====== STEP 1: personalize ====== */
   const nameInput = document.getElementById('nameInput');
   const guestName = document.getElementById('guestName');
-  const uploader  = document.getElementById('uploader');
-  const photoInput= document.getElementById('photoInput');
-  const avatar    = document.getElementById('avatar');
   const downloadBtn = document.getElementById('downloadBtn');
-
-  let hasPhoto = false;
 
   function getGender(){
     const g = document.querySelector('input[name="gender"]:checked');
@@ -368,106 +297,12 @@
     updateDownloadState();
   }
 
-  const _rsvpNameEl = document.getElementById('rsvpName');
-  nameInput.addEventListener('input', () => { renderName(); if(_rsvpNameEl) _rsvpNameEl.value = nameInput.value; });
+  nameInput.addEventListener('input', renderName);
   document.querySelectorAll('input[name="gender"]').forEach(r => r.addEventListener('change', renderName));
 
-  uploader.addEventListener('click', () => photoInput.click());
-
-  const cropImgEl=document.getElementById('cropImg');
-  const cropView=document.getElementById('cropView');
-  const cropModal=document.getElementById('cropModal');
-  const cropZoom=document.getElementById('cropZoom');
-  const CV=300;
-  const cropState={img:null,scale:1,base:1,tx:0,ty:0,natW:0,natH:0};
-
-  function setAvatar(dataUrl){
-    avatar.innerHTML = '<img src="'+dataUrl+'" alt="Ảnh khách mời">';
-    uploader.classList.add('has');
-    uploader.querySelector('p').innerHTML = '✅ Đã tải ảnh — <b>nhấn để đổi</b>';
-    hasPhoto = true;
-    updateDownloadState();
-  }
-  function clampCrop(){
-    const dw=cropState.natW*cropState.scale, dh=cropState.natH*cropState.scale;
-    cropState.tx=Math.min(0, Math.max(CV-dw, cropState.tx));
-    cropState.ty=Math.min(0, Math.max(CV-dh, cropState.ty));
-  }
-  function renderCrop(){
-    const dw=cropState.natW*cropState.scale, dh=cropState.natH*cropState.scale;
-    cropImgEl.style.width=dw+'px'; cropImgEl.style.height=dh+'px';
-    cropImgEl.style.left=cropState.tx+'px'; cropImgEl.style.top=cropState.ty+'px';
-  }
-  function openCropper(src){
-    const im=new Image();
-    im.onload=()=>{
-      cropState.img=im; cropState.natW=im.naturalWidth; cropState.natH=im.naturalHeight;
-      cropState.base=CV/Math.min(im.naturalWidth, im.naturalHeight);
-      cropState.scale=cropState.base;
-      const dw=cropState.natW*cropState.scale, dh=cropState.natH*cropState.scale;
-      cropState.tx=(CV-dw)/2; cropState.ty=(CV-dh)/2;
-      cropImgEl.src=src; cropZoom.value='1'; renderCrop();
-      cropModal.hidden=false;
-    };
-    im.src=src;
-  }
-
-  function handleFile(file){
-    if(!file || !file.type || file.type.indexOf('image/')!==0){
-      alert('Vui lòng chọn một tệp ảnh (JPG, PNG).'); return;
-    }
-    const reader = new FileReader();
-    reader.onload = (ev) => openCropper(ev.target.result);
-    reader.readAsDataURL(file);
-  }
-
-  photoInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
-
-  // kéo-thả ảnh từ máy tính vào khung upload
-  ['dragenter','dragover'].forEach(ev => uploader.addEventListener(ev, (e)=>{
-    e.preventDefault(); e.stopPropagation(); uploader.classList.add('dragover');
-  }));
-  ['dragleave','dragend'].forEach(ev => uploader.addEventListener(ev, (e)=>{
-    e.preventDefault(); e.stopPropagation(); uploader.classList.remove('dragover');
-  }));
-  uploader.addEventListener('drop', (e)=>{
-    e.preventDefault(); e.stopPropagation(); uploader.classList.remove('dragover');
-    if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
-  });
-
-  let _drag=false,_lx=0,_ly=0;
-  cropView.addEventListener('pointerdown',(e)=>{_drag=true;_lx=e.clientX;_ly=e.clientY;cropView.classList.add('dragging');cropView.setPointerCapture(e.pointerId);});
-  cropView.addEventListener('pointermove',(e)=>{if(!_drag)return;cropState.tx+=e.clientX-_lx;cropState.ty+=e.clientY-_ly;_lx=e.clientX;_ly=e.clientY;clampCrop();renderCrop();});
-  const _end=()=>{_drag=false;cropView.classList.remove('dragging');};
-  cropView.addEventListener('pointerup',_end);
-  cropView.addEventListener('pointercancel',_end);
-
-  cropZoom.addEventListener('input',(e)=>{
-    const z=parseFloat(e.target.value), cx=CV/2, cy=CV/2;
-    const oldS=cropState.scale, newS=cropState.base*z;
-    cropState.tx=cx-(cx-cropState.tx)*(newS/oldS);
-    cropState.ty=cy-(cy-cropState.ty)*(newS/oldS);
-    cropState.scale=newS; clampCrop(); renderCrop();
-  });
-
-  document.getElementById('cropCancel').addEventListener('click',()=>{cropModal.hidden=true;photoInput.value='';});
-  document.getElementById('cropOk').addEventListener('click',()=>{
-    const OUT=600;
-    const c=document.createElement('canvas'); c.width=OUT; c.height=OUT;
-    const ctx=c.getContext('2d');
-    ctx.fillStyle='#fff'; ctx.fillRect(0,0,OUT,OUT);
-    const sSize=CV/cropState.scale;
-    const sx=-cropState.tx/cropState.scale, sy=-cropState.ty/cropState.scale;
-    ctx.drawImage(cropState.img, sx, sy, sSize, sSize, 0,0, OUT, OUT);
-    setAvatar(c.toDataURL('image/jpeg',0.92));
-    cropModal.hidden=true; photoInput.value='';
-  });
-
   function updateDownloadState(){
-    downloadBtn.disabled = !(nameInput.value.trim() && hasPhoto);
+    downloadBtn.disabled = !nameInput.value.trim();
   }
-
-  document.getElementById('rsvpName').addEventListener('input', function(){ nameInput.value = this.value; renderName(); });
 
   /* ====== DOWNLOAD CARD ====== */
   downloadBtn.addEventListener('click', () => {
@@ -490,52 +325,6 @@
       });
   });
 
-  /* ====== STEP 2: RSVP submit ====== */
-  const rsvpForm = document.getElementById('rsvpForm');
-  const rsvpMsg  = document.getElementById('rsvpMsg');
-  const rsvpBtn  = document.getElementById('rsvpBtn');
-
-
-
-  rsvpForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    rsvpMsg.className = 'msg';
-
-    const data = {
-      company:  document.getElementById('rsvpCompany').value.trim(),
-      name:     document.getElementById('rsvpName').value.trim(),
-      position: document.getElementById('rsvpPosition').value.trim(),
-      phone:    document.getElementById('rsvpPhone').value.trim(),
-      email:    document.getElementById('rsvpEmail').value.trim(),
-      confirmed: document.getElementById('rsvpConfirm').checked ? 'Có' : 'Không',
-      submittedAt: new Date().toLocaleString('vi-VN')
-    };
-
-    rsvpBtn.disabled = true;
-    rsvpBtn.textContent = 'Đang gửi...';
-
-    try{
-      if(SCRIPT_URL){
-        await fetch(SCRIPT_URL, {
-          method:'POST',
-          mode:'no-cors',
-          headers:{'Content-Type':'text/plain;charset=utf-8'},
-          body: JSON.stringify(data)
-        });
-      } else {
-        await new Promise(r => setTimeout(r, 700)); // demo
-      }
-      rsvpMsg.classList.add('ok');
-      rsvpMsg.textContent = '🎉 Cảm ơn ' + data.name + '! Chúng tôi đã ghi nhận xác nhận tham dự của bạn.';
-      rsvpForm.reset();
-    }catch(err){
-      rsvpMsg.classList.add('err');
-      rsvpMsg.textContent = 'Gửi không thành công. Vui lòng kiểm tra kết nối và thử lại.';
-    }finally{
-      rsvpBtn.disabled = false;
-      rsvpBtn.textContent = 'Xác nhận tham dự';
-    }
-  });
 </script>
 </body>
 </html>
